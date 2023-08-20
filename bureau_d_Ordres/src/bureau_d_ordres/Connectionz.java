@@ -16,9 +16,15 @@ public class Connectionz {
    public static Connection getConnection(){
        try{
            Class.forName("com.mysql.cj.jdbc.Driver");
-           conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/etudiant","root","");
-       }catch(Exeption ex){
-           
+           conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_couriers","root","");
+       }catch(Exception ex){
+           System.out.println(""+ex);
        }
+       return conn;
    }
+    public static void main(String[] args){
+        getConnection();
+    }
+
+   
 }
